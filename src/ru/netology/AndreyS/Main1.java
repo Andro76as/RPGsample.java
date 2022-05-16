@@ -18,8 +18,9 @@ public class Main1 {
 
         //Predicate - соблюдение условия
 
-        Predicate<Integer> level = t -> t >= 0;
-        System.out.println(level.test(5) + " Пока еще жив"); // hp - нельзя записать
-        
+            Predicate<Integer> level = h -> h >= 0;
+            System.out.println(level.test(5) + " Пока еще жив"); // hp - нельзя записать
+
+
     }
 }

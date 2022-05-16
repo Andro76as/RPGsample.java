@@ -1,5 +1,7 @@
 package ru.netology.AndreyS;
 
+import java.util.Objects;
+
 public class Unit {
 
     private String name;
@@ -114,5 +116,46 @@ public class Unit {
             return new Unit(name,dmg,hp,level);
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Unit{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                ", dmg=" + dmg +
+                ", level=" + level +
+                ", x=" + x +
+                ", y=" + y +
+                ", isAlive=" + isAlive +
+                '}'+ '\n';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Unit unit = (Unit) o;
+
+        if (dmg != unit.dmg) return false;
+        if (hp != unit.hp) return false;
+        if (level != unit.level) return false;
+        if (x != unit.x) return false;
+        if (y != unit.y) return false;
+        if (isAlive != unit.isAlive) return false;
+        return Objects.equals(name, unit.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + dmg;
+        result = 31 * result + hp;
+        result = 31 * result + level;
+        result = 31 * result + x;
+        result = 31 * result + y;
+        result = 31 * result + (isAlive ? 1 : 0);
+        return result;
     }
 }
