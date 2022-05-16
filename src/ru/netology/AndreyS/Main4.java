@@ -25,8 +25,6 @@ public class Main4 {
 
 
                 Map<String, Integer> map = new HashMap<>(); // для подсчёта вхождений
-                Map.Entry<String, Integer> maxEntry = null; // будет хранить слово с максимальным числом вхождений
-
 
                 // "Подсчёт слов" с помощью hashmap
                 for (String val : list) { // обходим некоторую коллекцию
@@ -49,6 +47,7 @@ public class Main4 {
 
 
                 // обойдём коллекцию и найдём максимальное значение
+                Map.Entry<String, Integer> maxEntry = null; // будет хранить слово с максимальным числом вхождений
                 for (Map.Entry<String, Integer> entry : map.entrySet()) {
                     // если максимум не определен или очередное значение ещё больше
                     if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
